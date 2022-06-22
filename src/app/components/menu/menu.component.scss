@@ -1,0 +1,27 @@
+.menu {
+	height: 100vh;
+	width: 250px;
+	background-color: var(--bg-color);
+	color: var(--color-secondary);
+
+	&__title {
+		padding: 10px 20px;
+		margin-bottom: 20px;
+		text-align: center;
+		border-bottom: 3px solid var(--color-hover);
+		letter-spacing: 1px;
+	}
+
+	&__link {
+		display: block;
+		text-align: center;
+		padding: 10px 20px;
+		font-size: 20px;
+		letter-spacing: 1px;
+		transition: all 0.2s ease;
+
+		&:hover {
+			color: var(--color-hover)
+		}
+	}
+}
