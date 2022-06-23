@@ -6,17 +6,25 @@ import { AppComponent } from './app.component';
 import { LibrosComponent } from './components/libros/libros.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CategoriaFormularioComponent } from './components/categoria-formulario/categoria-formulario.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LibrosComponent,
     CategoriasComponent,
-    MenuComponent
+    MenuComponent,
+    CategoriaFormularioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

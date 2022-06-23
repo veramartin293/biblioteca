@@ -1,1 +1,15 @@
-<p>categorias works!</p>
+
+<div class="categorias">
+	<div class="categorias__listado">
+
+		<div class="categoria" *ngFor="let categoria of categorias">
+			<div class="categoria__nombre">{{ categoria.nombre }}</div>
+			<div class="categoria__acciones">
+				<i class="fa-solid fa-pen-to-square"></i>
+				<i class="fa-solid fa-trash"></i>
+			</div>
+		</div>
+
+
+	</div>
+</div>

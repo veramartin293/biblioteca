@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="enviarFormulario()">
+	<div class="form-field">
+		<label for="nombre">Nombre de categoria</label>
+		<input type="text" formControlName="nombre">
+	</div>
+
+	<button type="submit">Guardar</button>
+</form>

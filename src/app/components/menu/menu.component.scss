@@ -3,6 +3,7 @@
 	width: 250px;
 	background-color: var(--bg-color);
 	color: var(--color-secondary);
+	position: relative;
 
 	&__title {
 		padding: 10px 20px;
@@ -15,13 +16,29 @@
 	&__link {
 		display: block;
 		text-align: center;
-		padding: 10px 20px;
+		padding: 20px 20px;
 		font-size: 20px;
 		letter-spacing: 1px;
-		transition: all 0.2s ease;
+		transition: all 0.3s ease;
 
 		&:hover {
-			color: var(--color-hover)
+			color: var(--color-hover);
+			background-color: var(--bg-color-light);
 		}
+	}
+
+	.btn-nueva-categoria {
+		background-color: var(--color-btn);
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 400;
+		font-size: 20px;
+		position: absolute;
+		bottom: 10px;
+		right: 20px;
 	}
 }

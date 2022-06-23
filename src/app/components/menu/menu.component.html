@@ -1,5 +1,17 @@
 <div class="menu">
 	<h2 class="menu__title">Mi Biblioteca</h2>
-	<a class="menu__link" routerLink="/libros">Libros</a>
-	<a class="menu__link" routerLink="/categorias">Categorías</a>
+	<a 
+	class="menu__link" 
+	[routerLink]="['/libros']">Todos</a>
+	
+	<a 
+	class="menu__link" 
+	[routerLink]="['/libros']"
+	[queryParams]="{ 'categoria': categoria.nombre }" 
+	*ngFor="let categoria of categorias">{{ categoria.nombre }}</a>
+	<!-- <a class="menu__link" routerLink="/categorias">Categorías</a> -->
+
+	<div class="btn-nueva-categoria" (click)="abrirFromularioDeCategorias()">
+		<div>+</div>
+	</div>
 </div>

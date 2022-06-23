@@ -1,1 +1,17 @@
-<p>libros works!</p>
+<div class="libros">
+	<div class="libro" *ngFor="let libro of libros">
+		<div class="libro__imagen">
+			<img [src]="libro.portada" [alt]="libro.titulo">
+		</div>
+
+		<div class="libro__info">
+			<p><b>{{ libro.titulo }}</b></p>
+			<p>{{ libro.autor }}</p>
+		</div>
+
+		<div class="libro__acciones">
+			<i class="fa-solid fa-pen-to-square"></i>
+			<i class="fa-solid fa-trash"></i>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+.categorias {
+
+	&__listado {
+
+		display: flex;
+
+		.categoria {
+			width: 200px;
+			height: 50px;
+			border: 2px solid var(--color-primary);
+			border-radius: 10px;
+		}
+	}
+}
