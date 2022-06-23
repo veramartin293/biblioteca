@@ -7,6 +7,8 @@
 	--color-hover: #A972FF;
 
 	--color-btn: #1CB4FF;
+	--color-bueno: #4AD9C1;
+	--color-error: #E81C6F;
 }
 
 html {
@@ -37,6 +39,8 @@ a {
 	}
 }
 
+//Formularios
+
 .form-field {
 	margin-bottom: 10px;
 
@@ -56,4 +60,35 @@ button {
 	border: none;
 	padding: 10px 20px;
 	display: block;
+	border-radius: 10px;
+	transition: all 0.3s ease;
+
+	&:hover {
+		opacity: .5;
+	}
+}
+
+// Iconos
+
+i {
+	transition: all .3s ease;
+	display: block;
+
+	&.normal {
+		color: var(--color-btn);
+	}
+	&.editar {
+		color: var(--color-bueno);
+	}
+	&.eliminar {
+		color: var(--color-error);
+	}	
+	&:hover {
+		opacity: .5;
+	}
+}
+
+// Material
+.mat-dialog-container {
+	border-radius: 10px !important;
 }

@@ -7,15 +7,12 @@ import { Categoria } from '../models/categoria.model';
 })
 export class CategoriasService {
 
-  private categorias: Categoria[] = [
+  categorias: Categoria[] = [
     new Categoria(1, 'terror'),
     new Categoria(2, 'aventura'),
     new Categoria(3, 'fantástico'),
     new Categoria(4, 'científico'),
   ];
-
-  private categoriasSubject = new BehaviorSubject<Categoria[]>(this.categorias);
-  public categorias$ = this.categoriasSubject.asObservable();
 
   constructor() {
   }
@@ -26,7 +23,20 @@ export class CategoriasService {
     this.categorias.push(
       new Categoria(nuevoId, nombreDeCategoria)
     );
-    this.categoriasSubject.next(this.categorias);
+  }
+
+  editarCategoria(categoria: Categoria, nombreDeCategoriaNuevo: string) {
+    const categoriaParaModificar = this.categorias.find(cat => cat.id === categoria.id);
+    if (categoriaParaModificar) {
+      categoriaParaModificar.nombre = nombreDeCategoriaNuevo;
+    }
+  }
+
+  eliminarCategoria(categoriaNombre: string) {
+    const categoriaPorEliminarIndex = this.categorias.findIndex(cat => cat.nombre === categoriaNombre);
+    if (categoriaPorEliminarIndex !== -1) {
+      this.categorias.splice(categoriaPorEliminarIndex, 1);
+    }
   }
 
 }

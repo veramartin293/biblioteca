@@ -9,7 +9,7 @@
 		padding: 10px 20px;
 		margin-bottom: 20px;
 		text-align: center;
-		border-bottom: 3px solid var(--color-hover);
+		border-bottom: 1px solid var(--color-hover);
 		letter-spacing: 1px;
 	}
 
@@ -20,10 +20,25 @@
 		font-size: 20px;
 		letter-spacing: 1px;
 		transition: all 0.3s ease;
-
-		&:hover {
+		position: relative;
+		cursor: pointer;
+		
+		&:hover, &.active {
 			color: var(--color-hover);
-			background-color: var(--bg-color-light);
+		}
+	}
+
+	&__acciones {
+		padding: 20px;
+		display: flex;
+		position: absolute;
+		width: 100%;
+		bottom: 10px;
+		font-size: 24px;
+		justify-content: space-around;
+
+		i {
+			display: block;
 		}
 	}
 

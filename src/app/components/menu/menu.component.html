@@ -2,16 +2,18 @@
 	<h2 class="menu__title">Mi Biblioteca</h2>
 	<a 
 	class="menu__link" 
-	[routerLink]="['/libros']">Todos</a>
-	
+	[routerLink]="['/libros']"
+	[class.active]="categoriaSeleccionada === ''">Todos</a>
+
 	<a 
 	class="menu__link" 
-	[routerLink]="['/libros']"
-	[queryParams]="{ 'categoria': categoria.nombre }" 
+	[class.active]="categoriaSeleccionada === categoria.nombre"
+	(click)="navegar(categoria.nombre)"
 	*ngFor="let categoria of categorias">{{ categoria.nombre }}</a>
-	<!-- <a class="menu__link" routerLink="/categorias">Categorías</a> -->
 
-	<div class="btn-nueva-categoria" (click)="abrirFromularioDeCategorias()">
-		<div>+</div>
+	<div class="menu__acciones">
+		<i class="fa-solid fa-circle-plus normal" (click)="agregarCategoria()"></i>
+		<i class="fa-solid fa-pen-to-square editar" (click)="editarCategoria()"></i>
+		<i class="fa-solid fa-trash eliminar" (click)="eliminarCategoria()"></i>
 	</div>
 </div>
