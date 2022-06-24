@@ -1,5 +1,5 @@
 <div class="libros">
-	<div class="libro" *ngFor="let libro of libros">
+	<div class="libro" *ngFor="let libro of librosFiltrados">
 		<div class="libro__imagen" [style.background-image]="'url(' + libro.portada + ')'">
 			<!-- <img 
 			[src]="libro.portada" 
@@ -14,11 +14,10 @@
 		<div class="libro__info">
 			<p><b>{{ libro.titulo }}</b></p>
 			<p>{{ libro.autor }}</p>
-		</div>
-
-		<div class="libro__acciones">
-			<i class="fa-solid fa-pen-to-square editar" (click)="editarLibro(libro.id)"></i>
-			<i class="fa-solid fa-trash eliminar" (click)="eliminarLibro(libro.id)"></i>
+			<div class="libro__acciones">
+				<i class="fa-solid fa-pen-to-square editar" (click)="editarLibro(libro.id)"></i>
+				<i class="fa-solid fa-trash eliminar" (click)="eliminarLibro(libro.id)"></i>
+			</div>
 		</div>
 	</div>
 

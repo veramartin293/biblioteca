@@ -5,18 +5,36 @@
 	color: var(--color-secondary);
 	position: relative;
 
+	@media (max-width: 750px) {
+		width: 150px;
+	}
+
+	.links-section {
+		height: 80vh !important;
+
+		&.scrollable {
+			&::-webkit-scrollbar {
+				background-color:  var(--bg-color)
+			}
+		}
+	}
+
 	&__title {
 		padding: 10px 20px;
 		margin-bottom: 20px;
 		text-align: center;
 		border-bottom: 1px solid var(--color-hover);
 		letter-spacing: 1px;
+
+		@media (max-width: 750px) {
+			font-size: 18px;
+		}
 	}
 
 	&__link {
 		display: block;
 		text-align: center;
-		padding: 20px 20px;
+		padding: 10px;
 		font-size: 20px;
 		letter-spacing: 1px;
 		transition: all 0.3s ease;
@@ -26,6 +44,10 @@
 		
 		&:hover, &.active {
 			color: var(--color-hover);
+		}
+
+		@media (max-width: 750px) {
+			font-size: 14px;
 		}
 	}
 

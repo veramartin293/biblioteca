@@ -1,15 +1,18 @@
 <div class="menu">
-	<h2 class="menu__title">Mi Biblioteca</h2>
-	<a 
-	class="menu__link" 
-	[routerLink]="['/libros']"
-	[class.active]="categoriaSeleccionada === ''">Todos</a>
+	<h2 class="menu__title">Biblioteca</h2>
 
-	<a 
-	class="menu__link" 
-	[class.active]="categoriaSeleccionada === categoria.nombre"
-	(click)="navegar(categoria.nombre)"
-	*ngFor="let categoria of categorias">{{ categoria.nombre }}</a>
+	<div class="links-section">
+		<a 
+		class="menu__link" 
+		[routerLink]="['/libros']"
+		[class.active]="categoriaSeleccionada === ''">Todos</a>
+	
+		<a 
+		class="menu__link" 
+		[class.active]="categoriaSeleccionada === categoria.nombre"
+		(click)="navegar(categoria.nombre)"
+		*ngFor="let categoria of categorias">{{ categoria.nombre }}</a>
+	</div>
 
 	<div class="menu__acciones">
 		<i class="fa-solid fa-circle-plus normal" (click)="agregarCategoria()"></i>

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Libro } from '../models/libro.model';
 
 @Injectable({
@@ -27,8 +28,32 @@ export class LibrosService {
       'andrea bustamante',
       'https://images-na.ssl-images-amazon.com/images/I/91+BwNDpbSL.jpg',
       ['fantástico', 'científico']
+    ),
+    new Libro(
+      4,
+      'harry potter 2',
+      'andrea bustamante',
+      'https://images-na.ssl-images-amazon.com/images/I/91+BwNDpbSL.jpg',
+      ['fantástico', 'científico']
+    ),
+    new Libro(
+      4,
+      'harry potter 2',
+      'andrea bustamante',
+      'https://images-na.ssl-images-amazon.com/images/I/91+BwNDpbSL.jpg',
+      ['fantástico', 'científico']
+    ),
+    new Libro(
+      4,
+      'harry potter 2',
+      'andrea bustamante',
+      'https://images-na.ssl-images-amazon.com/images/I/91+BwNDpbSL.jpg',
+      ['fantástico', 'científico']
     )
   ];
+
+  private operacionCompletadaSubject = new Subject<boolean>();
+  operacionCompletada$ = this.operacionCompletadaSubject.asObservable();
 
   constructor() { }
 
@@ -51,6 +76,7 @@ export class LibrosService {
     if (libroPorEditarIdx !== -1) {
       console.log(libroPorEditarIdx);
       this.libros[libroPorEditarIdx] = libro;
+      this.operacionCompletadaSubject.next(true);
     }
   }
 
@@ -58,6 +84,7 @@ export class LibrosService {
     const nuevoId = this.libros[this.libros.length - 1].id + 1;
     libro.id = nuevoId;
     this.libros.push(libro);
+    this.operacionCompletadaSubject.next(true);
   }
 
   eliminarLibro(libroId: number) {
