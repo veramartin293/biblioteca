@@ -12,6 +12,8 @@ export class CategoriasService {
     new Categoria(2, 'aventura'),
     new Categoria(3, 'fantástico'),
     new Categoria(4, 'científico'),
+    new Categoria(5, 'novela'),
+    new Categoria(6, 'general'),
   ];
 
   constructor() {

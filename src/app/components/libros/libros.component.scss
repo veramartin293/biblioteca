@@ -2,6 +2,18 @@
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	column-gap: 20px;
+	// position: relative;
+
+	&__btn-agregar {
+		background-color: transparent;
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+
+		i {
+			font-size: 42px;
+		}
+	}
 
 	.libro {
 		height: 400px;
@@ -13,8 +25,11 @@
 
 		&__imagen {
 			height: 75%;
+			background-size: cover;
+			background-position: center;
 			overflow: hidden;
 			object-position: center;
+			position: relative;
 
 			img {
 				object-fit: contain;
@@ -22,8 +37,27 @@
 			}
 		}
 
+		&__categorias {
+			position: absolute;
+			bottom: 0;
+			text-transform: capitalize;
+
+			.categoria {
+				font-size: 12px;
+				background-color: var(--color-hover);
+				border-top-right-radius: 8px;
+				padding: 5px;
+				margin-bottom: 3px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
 		&__info {
 			padding: 10px 20px;
+			text-transform: capitalize;
 
 			p {
 				text-align: center;

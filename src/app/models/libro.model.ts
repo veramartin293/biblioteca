@@ -1,13 +1,21 @@
 export class Libro {
+	id: number;
 	titulo: string;
 	autor: string;
 	portada: string;
-	categoria: string;
+	categorias: string[];
 
-	constructor(titulo: string, autor: string, portada: string, categoria: string) {
+	constructor(
+		id: number = 0, 
+		titulo: string = '', 
+		autor: string = '', 
+		portada: string = '', 
+		categorias: string[] = []
+		) {
+		this.id = id;
 		this.titulo = titulo;
 		this.autor = autor;
 		this.portada = portada;
-		this.categoria = categoria;
+		this.categorias = categorias
 	}
 }

@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CategoriaFormularioComponent } from './components/categoria-formulario/categoria-formulario.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LibroFormularioComponent } from './components/libro-formulario/libro-formulario.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LibrosComponent,
     CategoriasComponent,
     MenuComponent,
-    CategoriaFormularioComponent
+    CategoriaFormularioComponent,
+    LibroFormularioComponent
   ],
   imports: [
     BrowserModule,

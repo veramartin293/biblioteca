@@ -1,7 +1,14 @@
 <div class="libros">
 	<div class="libro" *ngFor="let libro of libros">
-		<div class="libro__imagen">
-			<img [src]="libro.portada" [alt]="libro.titulo">
+		<div class="libro__imagen" [style.background-image]="'url(' + libro.portada + ')'">
+			<!-- <img 
+			[src]="libro.portada" 
+			[alt]="libro.titulo"
+			onError="this.src='../../../assets/portada-generica.png'"> -->
+
+			<div class="libro__categorias">
+				<div class="categoria" *ngFor="let categoria of libro.categorias">{{ categoria }}</div>
+			</div>
 		</div>
 
 		<div class="libro__info">
@@ -10,8 +17,12 @@
 		</div>
 
 		<div class="libro__acciones">
-			<i class="fa-solid fa-pen-to-square editar"></i>
-			<i class="fa-solid fa-trash eliminar"></i>
+			<i class="fa-solid fa-pen-to-square editar" (click)="editarLibro(libro.id)"></i>
+			<i class="fa-solid fa-trash eliminar" (click)="eliminarLibro(libro.id)"></i>
 		</div>
+	</div>
+
+	<div class="libros__btn-agregar">
+		<i class="fa-solid fa-circle-plus normal" (click)="agregarLibro()"></i>
 	</div>
 </div>
